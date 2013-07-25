@@ -10,6 +10,7 @@ class Conversion
     private $format;
     private $color;
     private $language;
+    private $trackingUrl = 'https://www.googleadservices.com/pagead/conversion/';
 
     public function __construct($id, $label, $value, $format, $color, $language)
     {
@@ -50,4 +51,16 @@ class Conversion
     {
         return $this->value;
     }
+
+    public function setTrackingUrl($trackingUrl)
+    {
+        $this->trackingUrl = $trackingUrl;
+    }
+
+    public function getTrackingUrl()
+    {
+        return $this->trackingUrl;
+    }
+
+
 }

@@ -15,7 +15,7 @@ var google_conversion_value = {{ google_adwords.activeConversion.getValue() }};
 <noscript>
 <div style="display:inline;">
 <img height="1" width="1" style="border-style:none;" alt="" 
-	src="https://www.googleadservices.com/pagead/conversion/{{ google_adwords.activeConversion.getId() }}/?label={{ google_adwords.activeConversion.getLabel() }}&amp;guid=ON&amp;script=0"/>
+	src="{{ google_adwords.activeConversion.getTrackingUrl() }}{{ google_adwords.activeConversion.getId() }}/?label={{ google_adwords.activeConversion.getLabel() }}&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
 <!-- GOOGLE CODE FOR CONVERSION END -->

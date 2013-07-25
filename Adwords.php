@@ -37,8 +37,17 @@ class Adwords
         if ($this->hasActiveConversion()) {
             $key = $this->container->get('session')->get(self::CONVERSION_KEY);
             $this->container->get('session')->remove(self::CONVERSION_KEY);
-            $config = $this->conversions[$key];
+            $config = array_merge(
+                array(
+                    'label' => null,
+                    'value' => null
+                ),
+                $this->conversions[$key]
+            );
             $this->activeConversion = new Conversion($config['id'], $config['label'], $config['value'], $config['format'], $config['color'], $config['language']);
+            if (isset($config['tracking_url'])) {
+                $this->activeConversion->setTrackingUrl($config['tracking_url']);
+            }
         }
         return $this->activeConversion;
     }
