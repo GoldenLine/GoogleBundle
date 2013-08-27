@@ -8,7 +8,8 @@
         var google_conversion_color = "{{ google_adwords.activeConversion.getColor() }}";
         var google_conversion_label = "{{ google_adwords.activeConversion.getLabel() }}";
         var google_conversion_value = {{ google_adwords.activeConversion.getValue() }};
-        var google_remarketing_only = {% if google_adwords.activeConversion.getRemarketing() %}true{% else %}false{% endif %}
+        var google_remarketing_only = {% if google_adwords.activeConversion.getRemarketing() %}true{% else %}false{% endif %};
+
         /* ]]> */
     </script>
     <script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
