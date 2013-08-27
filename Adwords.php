@@ -40,7 +40,7 @@ class Adwords
             $this->container->get('session')->remove(self::CONVERSION_KEY);
             $config = $this->conversions[$key];
 	        $conversionValue = $this->container->get('session')->get(self::CONVERSION_VALUE_KEY, $config['value']);
-            $this->activeConversion = new Conversion($config['id'], $config['label'], $conversionValue, $config['format'], $config['color'], $config['language'], $config['remarketing']);
+            $this->activeConversion = new Conversion($config['id'], $config['label'], $conversionValue, $config['format'], $config['color'], $config['language'], $config['remarketing_only']);
         }
         return $this->activeConversion;
     }

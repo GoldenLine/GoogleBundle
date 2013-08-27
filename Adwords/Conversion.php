@@ -10,7 +10,7 @@ class Conversion
 	private $format;
 	private $color;
 	private $language;
-	private $remarketing = false;
+	private $remarketing;
 
 	public function __construct($id, $label, $value, $format, $color, $language, $remarketing)
 	{
@@ -20,6 +20,7 @@ class Conversion
 		$this->format = $format;
 		$this->color = $color;
 		$this->language = $language;
+		$this->remarketing = $remarketing;
 	}
 
 	public function getColor()
