@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class Adwords
 {
     const CONVERSION_KEY = 'google_adwords/conversion';
-    const CONVERSION_VALUE_KEY = 'google_adwords/conversion/value';
+	const CONVERSION_VALUE_KEY = 'google_adwords/conversion/value';
 
     private $activeConversion;
     private $container;
@@ -39,8 +39,8 @@ class Adwords
             $key = $this->container->get('session')->get(self::CONVERSION_KEY);
             $this->container->get('session')->remove(self::CONVERSION_KEY);
             $config = $this->conversions[$key];
-            $conversionValue = $this->container->get('session')->get(self::CONVERSION_VALUE_KEY, $config['value']);
-            $this->activeConversion = new Conversion($config['id'], $config['label'], $conversionValue, $config['format'], $config['color'], $config['language']);
+	        $conversionValue = $this->container->get('session')->get(self::CONVERSION_VALUE_KEY, $config['value']);
+            $this->activeConversion = new Conversion($config['id'], $config['label'], $conversionValue, $config['format'], $config['color'], $config['language'], $config['remarketing']);
         }
         return $this->activeConversion;
     }

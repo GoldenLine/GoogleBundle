@@ -4,50 +4,56 @@ namespace AntiMattr\GoogleBundle\Adwords;
 
 class Conversion
 {
-    private $id;
-    private $label;
-    private $value;
-    private $format;
-    private $color;
-    private $language;
+	private $id;
+	private $label;
+	private $value;
+	private $format;
+	private $color;
+	private $language;
+	private $remarketing = false;
 
-    public function __construct($id, $label, $value, $format, $color, $language)
-    {
-        $this->id = $id;
-        $this->label = $label;
-        $this->value = $value;
-        $this->format = $format;
-        $this->color = $color;
-        $this->language = $language;
-    }
+	public function __construct($id, $label, $value, $format, $color, $language, $remarketing)
+	{
+		$this->id = $id;
+		$this->label = $label;
+		$this->value = $value;
+		$this->format = $format;
+		$this->color = $color;
+		$this->language = $language;
+	}
 
-    public function getColor()
-    {
-        return $this->color;
-    }
+	public function getColor()
+	{
+		return $this->color;
+	}
 
-    public function getFormat()
-    {
-        return $this->format;
-    }
+	public function getFormat()
+	{
+		return $this->format;
+	}
 
-    public function getLanguage()
-    {
-        return $this->language;
-    }
+	public function getLanguage()
+	{
+		return $this->language;
+	}
 
-    public function getId()
-    {
-        return $this->id;
-    }
+	public function getId()
+	{
+		return $this->id;
+	}
 
-    public function getLabel()
-    {
-        return $this->label;
-    }
+	public function getLabel()
+	{
+		return $this->label;
+	}
 
-    public function getValue()
-    {
-        return $this->value;
-    }
+	public function getValue()
+	{
+		return $this->value;
+	}
+
+	public function getRemarketing()
+	{
+		return $this->remarketing;
+	}
 }
