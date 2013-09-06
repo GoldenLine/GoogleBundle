@@ -454,8 +454,16 @@ class Analytics
     public function getTransaction()
     {
         $transaction = $this->getTransactionFromSession();
-        $this->container->get('session')->remove(self::TRANSACTION_KEY);
+
         return $transaction;
+    }
+
+    /**
+     * Removes transaction from session
+     */
+    public function removeTransaction()
+    {
+        return $this->container->get('session')->remove(self::TRANSACTION_KEY);
     }
 
     /**
@@ -532,7 +540,7 @@ class Analytics
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getApiKey()
@@ -541,7 +549,7 @@ class Analytics
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getClientId()
@@ -550,7 +558,7 @@ class Analytics
     }
 
     /**
-     * @return string 
+     * @return string
      */
     public function getTableId()
     {

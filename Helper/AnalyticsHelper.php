@@ -149,6 +149,11 @@ class AnalyticsHelper extends Helper
         return $this->analytics->getTransaction();
     }
 
+    public function removeTransaction()
+    {
+        return $this->analytics->removeTransaction();
+    }
+
     public function getName()
     {
         return 'google_analytics';
