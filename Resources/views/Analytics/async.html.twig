@@ -83,7 +83,7 @@ if ( _gaq == null || typeof(_gaq) != 'array') { var _gaq = window._gaq = []; }
 
     {% if google_analytics.isTransactionValid %}
 {% set transaction = google_analytics.transaction %}
-{% if google_analytics.trackerName(key) == transaction.trackerName %}}
+{% if google_analytics.trackerName(key) == transaction.trackerName %}
         {{ google_analytics.removeTransaction() }}
         _gaq.push(['{{ google_analytics.trackerName(key) }}_addTrans',
             '{{ transaction.orderNumber | escape('js') }}', // order number required
@@ -98,7 +98,7 @@ if ( _gaq == null || typeof(_gaq) != 'array') { var _gaq = window._gaq = []; }
 
         {% if google_analytics.hasItems %}
             {% for item in google_analytics.items %}
-                {% if google_analytics.trackerName(key) == item.trackerName %}}
+                {% if google_analytics.trackerName(key) == item.trackerName %}
                 _gaq.push(['{{ google_analytics.trackerName(key) }}_addItem',
                     '{{ item.orderNumber | escape('js') }}', // order number required
                     '{{ item.sku | escape('js') }}', // sku required
