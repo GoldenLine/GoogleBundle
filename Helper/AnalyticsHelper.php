@@ -151,7 +151,7 @@ class AnalyticsHelper extends Helper
 
     public function removeTransaction()
     {
-        return $this->analytics->removeTransaction();
+        $this->analytics->removeTransaction();
     }
 
     public function getName()
