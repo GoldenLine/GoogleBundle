@@ -72,12 +72,12 @@ if ( _gaq == null || typeof(_gaq) != 'array') { var _gaq = window._gaq = []; }
     {% endif %}
 
     {% if google_analytics.hasCustomPageView %}
-        _gaq.push(['{{ google_analytics.trackerName(key) }}_trackPageview', '{{ google_analytics.getCustomPageView() | raw }}']);
+        _gaq.push(['{{ google_analytics.trackerName(key) }}_trackPageview', '{{ google_analytics.getCustomPageView() }}']);
     {% else %}
         if (window.location.hash) {
-            _gaq.push(['{{ google_analytics.trackerName(key) }}_trackPageview', '{{ google_analytics.getRequestUri() | raw }}'+window.location.hash]);
+            _gaq.push(['{{ google_analytics.trackerName(key) }}_trackPageview', '{{ google_analytics.getRequestUri() }}'+window.location.hash]);
         } else {
-            _gaq.push(['{{ google_analytics.trackerName(key) }}_trackPageview', '{{ google_analytics.getRequestUri() | raw }}']);
+            _gaq.push(['{{ google_analytics.trackerName(key) }}_trackPageview', '{{ google_analytics.getRequestUri() }}']);
         }
     {% endif %}
 
@@ -135,7 +135,7 @@ if ( _gaq == null || typeof(_gaq) != 'array') { var _gaq = window._gaq = []; }
 
 (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? '{{ google_analytics.sourceHttps | raw }}' : '{{ google_analytics.sourceHttp | raw }}') + '{{ google_analytics.sourceEndpoint | raw }}';
+    ga.src = ('https:' == document.location.protocol ? '{{ google_analytics.sourceHttps }}' : '{{ google_analytics.sourceHttp }}') + '{{ google_analytics.sourceEndpoint }}';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 </script>
